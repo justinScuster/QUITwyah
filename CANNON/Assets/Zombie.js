@@ -26,10 +26,31 @@ function Update ()
 
 function OnTriggerEnter(other:Collider)
 {
-	Debug.Log("HIOT");
-	print("hit");
 	if(other.CompareTag("Player"))
 	{
-		other.rigidbody.AddForce(Vector3(1,1,0).normalized * 500);
+		if(targetHead != null)
+		{
+			
+			var vs : HeadScript = targetHead.GetComponent("HeadScript");
+			//if(vs.rigidbody.velocity.y < .5)
+				//vs.rigidbody.velocity.y *= 2000;
+			var outputSpeed = vs.rigidbody.velocity.x * 4;
+			if(outputSpeed <= 0)
+				outputSpeed *= -1;
+			if(outputSpeed <= .5)
+				outputSpeed *= 20;
+			var outputSpeed2 = vs.rigidbody.velocity.y * 100;
+			if(outputSpeed2 <= 0)
+				outputSpeed2 *= -1;
+			if(outputSpeed2 <= .2)
+				outputSpeed *= 30;
+			
+			//other.rigidbody.AddRelativeForce(Vector2(outputSpeed,outputSpeed2));
+			other.rigidbody.AddForce(Vector3(outputSpeed,outputSpeed2,0).normalized * 500);
+			
+			
+			Destroy(this.gameObject);
+		}
 	}
+	
 }

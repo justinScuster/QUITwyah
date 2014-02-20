@@ -38,14 +38,18 @@ function Update ()
 	target = cannonFodder.currentHead.transform;
 	//var angle = 2*Mathf.Atan(Mathf.Tan(Mathf.Deg2Rad*camera.fieldOfView/2) / camera.aspect);
 
-	transform.position.x = target.position.x + 14.5 + target.rigidbody.velocity.x*.1f;
+	//This is the current camera controls where it zooms out and shizz
+
+	/*transform.position.x = target.position.x + 14.5 + target.rigidbody.velocity.x*.1f;
 	transform.position.y = (target.position.y)/2+10;
 	camera.orthographicSize = transform.position.y+0.5f;
 	if(camera.orthographicSize > maxSize)
 	{
 		camera.orthographicSize = maxSize;
 		transform.position.y = target.position.y;
-	}
+	}*/
+	
+	
 	/*
 	transform.position.y = (target.position.y + -1)/2;
 	
@@ -96,18 +100,18 @@ function Update ()
 			transform.position.y = 3.89;
 			transform.position.z = -10;
 		}*/
-	/*
+	
 	var targetSpeed : float = target.rigidbody.velocity.magnitude;
 	
 	if(target.position.x > -5)
 		transform.position.x = target.position.x + 10;
 	else
-		transform.position.x = target.position.x;
-	if(target.position.y > 6.5)
+		transform.position.x = target.position.x + 10;
+	if(target.position.y > 10)
 		transform.position.y = target.position.y - 2.5;
 	else
-		transform.position.y = 0.9060373;
-	*/
+		transform.position.y = 7.262981;
+	
 	//if(targetSpeed > 100)
 		//transform.position.z = targetSpeed + -10.97274;
 

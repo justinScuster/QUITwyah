@@ -38,7 +38,7 @@ function Start ()
 function Update ()
 {
 
-	if(Input.GetKeyDown("r"))
+	if(Input.GetKeyDown("r") && currentHead != null)
 			Reset();
 	
 	
@@ -108,8 +108,10 @@ function Update ()
 
 function Reset()
 {
+	Destroy(currentHead.gameObject);
 	stop = powerSet = powerbar.active = false;
 	currentHead = this.gameObject;
+	roomBarrier.Reset();
 	//cameraController.target = transform;
 	//cameraController.Reset();
 	//
