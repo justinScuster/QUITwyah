@@ -1,3 +1,6 @@
+https://help.github.com/articles/markdown-basics
+https://help.github.com/articles/github-flavored-markdown
+
 *Button Implementation Guide:*
     Each button should have a script that manages the states of the button and governs the manner in which they react to mouse interactions. The three functions that we'll care about are:
     
