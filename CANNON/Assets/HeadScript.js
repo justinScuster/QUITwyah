@@ -78,9 +78,11 @@ function Update ()
 					
 			if(Input.GetKeyUp("d"))
 			{
-				var GO = rigidbody.velocity * 0.01;
+				var GO = rigidbody.velocity * 0.015;
 				//rigidbody.AddRelativeForce(PowerForce*Vector3.right*GO.x);
 				//rigidbody.AddRelativeForce(PowerForce*Vector3.right*rigidbody.velocity.x*.15);
+				//if(GO.x <= .5)
+				//	GO.x *= 2;
 				rigidbody.AddForce(PowerForce*Vector2(GO.x*1.75,0));
 				bugMeter = 0;
 			}
@@ -95,8 +97,8 @@ function OnCollisionEnter(other:Collision)
 	
 	if(other.gameObject.CompareTag("Floor"))
 	{
-		rigidbody.velocity.y *= .5;
-		rigidbody.velocity.x *= .6;
+		rigidbody.velocity.y *= .75;
+		rigidbody.velocity.x *= .9;
 		timeSinceBounce = 0;
 	}
 }
@@ -104,7 +106,7 @@ function OnCollisionEnter(other:Collision)
 
 function OnCollisionStay(other:Collision)
 {
-	rigidbody.velocity -= rigidbody.velocity * 1.2 * Time.deltaTime;
+	//rigidbody.velocity -= rigidbody.velocity * 1.2 * Time.deltaTime;
 	timeSinceBounce += Time.deltaTime;
 	if(timeSinceBounce >= 1.5)
 		cannon.Reset();

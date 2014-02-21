@@ -31,7 +31,7 @@ function Update ()
 				fls.zhead = cannonFodder.currentHead;
 				
 				
-				for(var i = 0; i < Random.Range(1,50); i++)
+				for(var i = 0; i < Random.Range(1,30); i++)
 				{
 						Instantiate(HumanNPC,Vector3(transform.position.x+Random.Range(0,Floor.transform.lossyScale.x)-Floor.transform.lossyScale.x/2,
 							HumanNPC.transform.lossyScale.y*1.5,0),Quaternion.identity);

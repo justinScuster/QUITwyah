@@ -48,10 +48,12 @@
   <ItemGroup>
      <Compile Include="Assets\CannonControl.js" />
      <Compile Include="Assets\DasCamera.js" />
+     <Compile Include="Assets\FloorDelete.js" />
      <Compile Include="Assets\HeadScript.js" />
      <Compile Include="Assets\RoomBarrier.js" />
      <Compile Include="Assets\Zombie.js" />
      <Compile Include="Assets\ZombieSpawner.js" />
+     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
