@@ -1,15 +1,25 @@
-==STATES==
-=Main Menu=
+States
+======
+
+Main Menu
 ---------
-=Game=
+Assets:
+  Title
+Buttons:
+  Start    -> Game
+  Score    -> High Score
+  Controls -> Controls/Intro
+  Quit     -> Quit
+
+Game
 ----
-=Controls/Intro=
+Controls/Intro
 --------------
-=Result=
+Result
 ------
-=High Score=
+High Score
 ----------
-=Quit=
+Quit
 ----
-=Splash=
+Splash
 ------
