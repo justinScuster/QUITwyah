@@ -1,9 +1,9 @@
 Button Implementation Guide:
     Each button should have a script that manages the states of the button and governs the manner in which they react to mouse interactions. The three functions that we'll care about are:
     
-  OnMouseOver - Should provide some subtle highlights.
-  OnMouseDown - Should provide some less subtle highlights.
-  OnMouseUp   - Move the game to the target state.
+*  OnMouseOver - Should provide some subtle highlights.
+*  OnMouseDown - Should provide some less subtle highlights.
+*  OnMouseUp   - Move the game to the target state.
 
 
 States
