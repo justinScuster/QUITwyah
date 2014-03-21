@@ -107,8 +107,10 @@ function Update ()
 		transform.position.x = target.position.x + 10;
 	else
 		transform.position.x = target.position.x + 10;
-	if(target.position.y > 10)
+	if(target.position.y > 10 && target.position.y < 100)
 		transform.position.y = target.position.y - 2.5;
+	else if(target.position.y > 100)
+		transform.position.y = 100;
 	else
 		transform.position.y = 7.262981;
 	

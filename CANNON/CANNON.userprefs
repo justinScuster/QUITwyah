@@ -1,13 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\HeadScript.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Zombie.js">
     <Files>
-      <File FileName="Assets\RoomBarrier.js" Line="34" Column="40" />
-      <File FileName="Assets\DasCamera.js" Line="111" Column="50" />
-      <File FileName="Assets\HeadScript.js" Line="100" Column="30" />
-      <File FileName="Assets\CannonControl.js" Line="114" Column="22" />
-      <File FileName="Assets\Zombie.js" Line="42" Column="50" />
-      <File FileName="Assets\FloorDelete.js" Line="15" Column="2" />
+      <File FileName="Assets\RoomBarrier.js" Line="1" Column="1" />
+      <File FileName="Assets\DasCamera.js" Line="108" Column="6" />
+      <File FileName="Assets\HeadScript.js" Line="150" Column="57" />
+      <File FileName="Assets\CannonControl.js" Line="1" Column="1" />
+      <File FileName="Assets\Zombie.js" Line="65" Column="5" />
+      <File FileName="Assets\FloorDelete.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
