@@ -1,12 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Zombie.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\HeadScript.js">
     <Files>
-      <File FileName="Assets\RoomBarrier.js" Line="1" Column="1" />
-      <File FileName="Assets\DasCamera.js" Line="108" Column="6" />
-      <File FileName="Assets\HeadScript.js" Line="150" Column="57" />
+      <File FileName="Assets\HeadScript.js" Line="140" Column="5" />
+      <File FileName="Assets\DasCamera.js" Line="1" Column="1" />
+      <File FileName="Assets\RoomBarrier.js" Line="40" Column="1" />
       <File FileName="Assets\CannonControl.js" Line="1" Column="1" />
-      <File FileName="Assets\Zombie.js" Line="65" Column="5" />
+      <File FileName="Assets\Zombie.js" Line="30" Column="4" />
       <File FileName="Assets\FloorDelete.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>

@@ -1,11 +1,4 @@
 #pragma strict
-/*
-	TODO:
-		IF the floor AND the head CAN be visible, then both should be
-
-
-		Also, the camera's field view should never descend below the floor
-*/
 
 var target:Transform;
 var maxSize : float;

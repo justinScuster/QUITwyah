@@ -27,7 +27,7 @@ function Update ()
 
 function OnTriggerEnter(other:Collider)
 {
-	if(other.CompareTag("Player"))
+	/*if(other.CompareTag("Player"))
 	{
 		if(targetHead != null)
 		{
@@ -56,10 +56,10 @@ function OnTriggerEnter(other:Collider)
 				if(outputSpeed.x <= .5)
 					outputSpeed.x *= 2;
 				//var outputSpeed2 = vs.rigidbody.velocity.y * 5;
-				/*if(outputSpeed.y <= 0)
+				if(outputSpeed.y <= 0)
 					outputSpeed.y *= -1;
 				if(outputSpeed.y <= .2)
-					outputSpeed.y *= 2;*/
+					outputSpeed.y *= 2;
 				
 				//other.rigidbody.AddRelativeForce(Vector2(outputSpeed,outputSpeed2));
 				other.rigidbody.AddForce(Vector3(outputSpeed.x,outputSpeed.y,0).normalized * 500);
@@ -69,6 +69,6 @@ function OnTriggerEnter(other:Collider)
 			
 			Destroy(this.gameObject);
 		}
-	}
+	}*/
 	
 }

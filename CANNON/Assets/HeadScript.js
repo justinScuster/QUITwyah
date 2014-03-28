@@ -2,6 +2,8 @@
 
 var cannon : CannonControl; 
 
+var HeadBase : GameObject; 
+
 var bugMeter:float = 0;
 
 var PowerForce = 500;
@@ -32,8 +34,10 @@ public var verticalDrag : float = 0;
 public var bounceCount : float = 0;
 public var timeSinceBounce : float = 0;
 
-function Start () {
-
+private var floorThingy:GameObject;
+function Start () 
+{
+	floorThingy = Instantiate(HeadBase,Vector3(transform.position.x,0,0),Quaternion.identity);
 }
 
 function Update ()
@@ -51,12 +55,12 @@ function Update ()
 		
 	}*/
 	
-	
+	floorThingy.transform.position.x = this.transform.position.x;
 	bugMeter += Time.deltaTime;
 	rigidbody.drag = .25;
 	
-	if(rigidbody.transform.position.y <= 0.97)
-		rigidbody.transform.position.y = 0.98;
+	//if(rigidbody.transform.position.y <= 0.97)
+	//	rigidbody.transform.position.y = 0.98;
 	
 	//if(rigidbody.transform.position.y > 100)
 	//	rigidbody.AddForce(Vector3(0,-rigidbody.velocity.y,0).normalized);
@@ -94,7 +98,7 @@ function Update ()
 					
 			if(Input.GetKeyUp("d"))
 			{
-				var GO = rigidbody.velocity * 0.015;
+				var GO = rigidbody.velocity * 0.0015;
 				//rigidbody.AddRelativeForce(PowerForce*Vector3.right*GO.x);
 				//rigidbody.AddRelativeForce(PowerForce*Vector3.right*rigidbody.velocity.x*.15);
 				//if(GO.x <= .5)
@@ -122,16 +126,18 @@ function Update ()
 	
 	//if(stuckToGround == true)
 	//	rigidbody.AddForce(Vector3(0,5,0).normalized * 500);
+	
+	//HeadBase.rigidbody.transform.position.x = rigidbody.transform.position.x;
 }
 
 
 function OnCollisionEnter(other:Collision)
 {
 	
-	if(other.gameObject.CompareTag("Floor"))
+	if(other.gameObject.CompareTag("Head Base"))
 	{
-		rigidbody.velocity.y *= .75;
-		rigidbody.velocity.x *= .9;
+		//rigidbody.velocity.y *= .75;
+		//rigidbody.velocity.x *= .9;
 		timeSinceBounce = 0;	
 	}
 	
@@ -147,14 +153,19 @@ function OnCollisionStay(other:Collision)
 	
 	//rigidbody.velocity -= rigidbody.velocity * 1.2 * Time.deltaTime;
 	timeSinceBounce += Time.deltaTime;
-	if(rigidbody.velocity.x <= .2 && timeSinceBounce >= 1.5)
+	if(rigidbody.velocity.x <= .3 && timeSinceBounce >= 1.5)
 		cannon.Reset();
-	else if(timeSinceBounce >= .3)
-		rigidbody.AddForce(Vector3(0,15,0).normalized * 500);
+	/*else if(timeSinceBounce >= .3)
+		rigidbody.AddForce(Vector3(0,15,0).normalized * 500);*/
 		
 	//if(other.gameObject.CompareTag("Zombie") && stuckToGround == true)
 		//rigidbody.AddForce(Vector3(0,20,0).normalized*500);
 		
+}
+
+function FixedUpdate()
+{
+	//HeadBase.rigidbody.transform.position.x = transform.position.x;
 }
 
 
