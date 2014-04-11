@@ -35,6 +35,10 @@ public var bounceCount : float = 0;
 public var timeSinceBounce : float = 0;
 
 private var floorThingy:GameObject;
+
+
+
+
 function Start () 
 {
 	floorThingy = Instantiate(HeadBase,Vector3(transform.position.x,0,0),Quaternion.identity);
@@ -98,7 +102,7 @@ function Update ()
 					
 			if(Input.GetKeyUp("d"))
 			{
-				var GO = rigidbody.velocity * 0.0015;
+				var GO = rigidbody.velocity * .005;
 				//rigidbody.AddRelativeForce(PowerForce*Vector3.right*GO.x);
 				//rigidbody.AddRelativeForce(PowerForce*Vector3.right*rigidbody.velocity.x*.15);
 				//if(GO.x <= .5)
@@ -136,10 +140,9 @@ function OnCollisionEnter(other:Collision)
 	
 	if(other.gameObject.CompareTag("Head Base"))
 	{
-		//rigidbody.velocity.y *= .75;
-		//rigidbody.velocity.x *= .9;
 		timeSinceBounce = 0;	
 	}
+	
 	
 	/*if(other.gameObject.CompareTag("Zombie"))
 	{
@@ -150,7 +153,7 @@ function OnCollisionEnter(other:Collision)
 
 function OnCollisionStay(other:Collision)
 {
-	
+	/*
 	//rigidbody.velocity -= rigidbody.velocity * 1.2 * Time.deltaTime;
 	timeSinceBounce += Time.deltaTime;
 	if(rigidbody.velocity.x <= .3 && timeSinceBounce >= 1.5)
@@ -159,9 +162,64 @@ function OnCollisionStay(other:Collision)
 		rigidbody.AddForce(Vector3(0,15,0).normalized * 500);*/
 		
 	//if(other.gameObject.CompareTag("Zombie") && stuckToGround == true)
-		//rigidbody.AddForce(Vector3(0,20,0).normalized*500);
+		//rigidbody.AddForce(Vector3(0,20,0).normalized*500);*/
 		
 }
+
+function OnTriggerEnter(other:Collider)
+{
+	if(other.gameObject.CompareTag("Zombie"))
+	{
+		var z:Zombie = other.gameObject.GetComponent("Zombie");
+		
+		rigidbody.velocity.y = Mathf.Abs(rigidbody.velocity.y);
+		
+		rigidbody.velocity *= .9;
+		print(rigidbody.velocity.magnitude);
+		if(rigidbody.velocity.magnitude < 10)
+		{
+			print("blah");	
+			rigidbody.velocity = rigidbody.velocity.normalized * 50;
+		}
+		if(transform.position.y > z.GetHeadY())
+		{
+			if(rigidbody.velocity.x < rigidbody.velocity.y)
+			{
+				var tempVel = rigidbody.velocity.x;
+				rigidbody.velocity.x = rigidbody.velocity.y;
+				rigidbody.velocity.y = tempVel;
+			}
+		}
+		
+		else if(transform.position.y < z.GetFootY())
+		{
+			if(rigidbody.velocity.x > rigidbody.velocity.y)
+			{
+				var tempVel2 = rigidbody.velocity.x;
+				rigidbody.velocity.x = rigidbody.velocity.y;
+				rigidbody.velocity.y = tempVel2;
+				print("DO");
+			}
+		}
+		
+		else if(z.transform.forward.x < 0)
+		{
+			rigidbody.velocity.y *= -1;
+		}
+		
+		else 
+		{
+
+		}
+		
+	}
+	
+	if(other.gameObject.CompareTag("Head Base"))
+	{
+		rigidbody.velocity.y = Mathf.Abs(rigidbody.velocity.y);
+	}
+}
+
 
 function FixedUpdate()
 {

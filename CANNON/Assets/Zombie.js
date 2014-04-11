@@ -2,12 +2,35 @@
 
 private var zombieSpeed = 100;
 public var targetHead : GameObject;
+public var zHead = .75;
+public var zFoot = .5;
 private var hitDisplay : boolean = false;
 
 function Start () 
 {
 	//zombieSpeed = Random.Range(100,500);
 }
+
+function GetHeadY() : float
+{
+	var footy = transform.position.y - transform.lossyScale.y;
+
+	var heady = 2 * transform.lossyScale.y;
+	
+	return footy * heady * zHead;
+	
+}
+
+
+function GetFootY() : float 
+{
+	var footy = transform.position.y - transform.lossyScale.y;
+
+	var heady = 2 * transform.lossyScale.y;
+	
+	return footy * heady * zFoot;
+}
+
 
 function Awake()
 {
